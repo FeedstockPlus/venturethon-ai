@@ -1,0 +1,30 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create and Activate Virtual Environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11.4
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run App
+        run:  streamlit run main.py
