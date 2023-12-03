@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 3  # Set the maximum execution time for the job
 
     steps:
       - name: Checkout Repository
