@@ -43,6 +43,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Create a .env file
+
+Create a file named `.env` in the root of your project and add the following content:
+
+```dotenv
+openAi_key=your_openai_api_key
+```
+
+Replace `your_openai_api_key` with your actual OpenAI API key.
+
 ### Run the Application
 
 ```bash
